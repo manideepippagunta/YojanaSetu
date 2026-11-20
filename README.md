@@ -13,8 +13,8 @@
 
 ## 🌐 Live Demo & Preview
 
-- **Live Web Application:** *(Deployment in progress)*
-- **Backend API Docs:** *(Deployment in progress)*
+- **Live Web Application:** [https://yojanasetu-ai.vercel.app](https://yojanasetu-ai.vercel.app)
+- **Backend API Docs:** [https://yojanasetu-v774.onrender.com/docs](https://yojanasetu-v774.onrender.com/docs)
 
 ---
 
