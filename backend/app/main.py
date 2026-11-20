@@ -26,8 +26,8 @@ from app.prompts import build_rag_system_prompt, build_eligibility_prompt
 load_dotenv(BASE_DIR / ".env")
 
 # Ordered fallback lists — first entry is preferred, rest are tried on 503/429/UNAVAILABLE
-FAST_MODELS = ["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-2.0-flash"]
-DEEP_MODELS = ["gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-2.0-flash"]
+FAST_MODELS = ["gemini-3.5-flash-lite", "gemini-3.8-flash"]
+DEEP_MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
 
 
 def is_retryable_error(e: Exception) -> bool:

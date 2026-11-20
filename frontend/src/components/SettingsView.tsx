@@ -61,7 +61,7 @@ export default function SettingsView({
             <div>
               <p className="text-sm font-semibold text-slate-800">AI Model & Speed Mode</p>
               <p className="text-xs text-slate-500">
-                Fast uses gemini-3.5-flash-lite (~1s). Deep uses gemini-3.6-flash.
+                Fast uses gemini-3.5-flash-lite (~1s). Deep uses gemini-3.8-flash.
               </p>
             </div>
           </div>
@@ -80,9 +80,9 @@ export default function SettingsView({
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
                 modelMode === 'deep' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-600'
               }`}
-              title="gemini-3.6-flash"
+              title="gemini-3.8-flash"
             >
-              Deep (3.6-flash)
+              Deep (3.8-flash)
             </button>
           </div>
         </div>

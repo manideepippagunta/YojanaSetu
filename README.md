@@ -7,14 +7,14 @@
 [![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Firebase](https://img.shields.io/badge/Auth-Firebase-FFCA28.svg?logo=firebase&logoColor=black)](https://firebase.google.com/)
 
-> **YojanaSetu** (యोजना సేతు / योजना सेतु) bridges the gap between Indian citizens and complex government welfare schemes through multilingual AI, strict document-grounded RAG, and an instant interactive eligibility engine.
+> **YojanaSetu** (యోజన సేతు / योजना सेतु) bridges the gap between Indian citizens and complex government welfare schemes through multilingual AI, strict document-grounded RAG, and an instant interactive eligibility engine.
 
 ---
 
 ## 🌐 Live Demo & Preview
 
-- **Live Web Application:** *[Add your production deployment URL here, e.g., https://yojanasetu.vercel.app]*
-- **Backend API Docs:** *[Add your backend docs URL here, e.g., https://api.yojanasetu.org/docs]*
+- **Live Web Application:** *(Deployment in progress)*
+- **Backend API Docs:** *(Deployment in progress)*
 
 ---
 
@@ -64,8 +64,8 @@ Full accessibility support for users with limited literacy:
 
 ### 8. ⚡ Multi-Model Gemini Fallback Pipeline
 To ensure high availability against rate limits and transient 503/429 errors, the backend implements a resilient multi-model fallback chain:
-- **Fast Mode:** `gemini-3.5-flash-lite` ➔ `gemini-3.6-flash` ➔ `gemini-2.0-flash`
-- **Deep Mode:** `gemini-3.6-flash` ➔ `gemini-3.5-flash-lite` ➔ `gemini-2.0-flash`
+- **Fast Mode:** `gemini-3.5-flash-lite` ➔ `gemini-3.8-flash`
+- **Deep Mode:** `gemini-3.8-flash` ➔ `gemini-3.5-flash-lite`
 
 ---
 
@@ -88,8 +88,8 @@ flowchart LR
     end
 
     subgraph GoogleAI ["Google Gemini AI"]
-        Embed["text-embedding-004"]
-        LLM["gemini-3.5-flash-lite / gemini-3.6-flash"]
+        Embed["gemini-embedding-2"]
+        LLM["gemini-3.5-flash-lite / gemini-3.8-flash"]
     end
 
     UI -->|SSE Stream / JSON| API
@@ -103,7 +103,7 @@ flowchart LR
 - **Framework:** [FastAPI](https://fastapi.tiangolo.com/) (Python 3.11+) with asynchronous SSE streaming (`StreamingResponse`).
 - **Vector Database:** [ChromaDB](https://www.trychroma.com/) for local semantic search and persistent vector embeddings.
 - **Document Processing:** [PyMuPDF (fitz)](https://pymupdf.readthedocs.io/) for high-accuracy text and page extraction.
-- **LLM & Embeddings:** Google [Gemini API](https://ai.google.dev/) (`google-genai` SDK) using `text-embedding-004` and `gemini-3.5-flash-lite` / `gemini-3.6-flash`.
+- **LLM & Embeddings:** Google [Gemini API](https://ai.google.dev/) (`google-genai` SDK) using `gemini-embedding-2` and `gemini-3.5-flash-lite` / `gemini-3.8-flash`.
 
 ### Frontend
 - **Framework:** [React 18](https://react.dev/) + [Vite](https://vitejs.dev/) + [TypeScript](https://www.typescriptlang.org/).
