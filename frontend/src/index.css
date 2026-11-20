@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Soft pastel atmospheric canvas matching the reference design */
+.pastel-canvas {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(219, 234, 254, 0.85) 0%, transparent 45%),
+    radial-gradient(circle at 80% 35%, rgba(243, 232, 255, 0.85) 0%, transparent 50%),
+    radial-gradient(circle at 45% 85%, rgba(254, 226, 226, 0.55) 0%, transparent 50%),
+    linear-gradient(180deg, #f5f7fc 0%, #f1f3fa 100%);
+}
+
+@keyframes waveDot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+
+.thinking-dot-1 { animation: waveDot 1.2s infinite ease-in-out 0s; }
+.thinking-dot-2 { animation: waveDot 1.2s infinite ease-in-out 0.18s; }
+.thinking-dot-3 { animation: waveDot 1.2s infinite ease-in-out 0.36s; }
+
+@keyframes shimmerSlide {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-bar {
+  background: linear-gradient(90deg, #e2e8f0 25%, #c7d2fe 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmerSlide 1.6s infinite linear;
+}
+
+/* Custom sleek scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.5);
+}
